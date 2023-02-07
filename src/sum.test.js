@@ -31,3 +31,15 @@ expect(bookPrice).toBe(3000);
 bookPrice=100;
 expect(bookPrice).toBe(100);
 });
+
+test('console.logの練習', () => {
+  const total=42+42;
+  console.log("total"); // => 1
+
+  const value = "値";
+  console.log(value); // => ReferenceError: x is not defined
+  
+});
+
+  
+ 
