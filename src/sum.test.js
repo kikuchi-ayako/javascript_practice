@@ -10,3 +10,10 @@ test('プログラムコメントの練習', () => {
   expect(sum(1, 2)).toBe(4);
 */
 });
+
+test('constの練習', () => {
+const bookTitle = "本";
+const bookPrice = 3000;
+expect(bookTitle).toBe("本");
+expect(bookPrice).toBe(3000);
+});
