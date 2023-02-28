@@ -87,3 +87,31 @@ test('オブジェクトの練習', () => {
  expect(hairetu[3].address).toBe("東京");
  expect(hairetu[3].age).toBe(20);
 });
+
+test('べき乗の練習', () => {
+ 
+ expect(3**4).toBe(81);
+ expect(Math.pow(3, 4)).toBe(81);
+});
+
+test('分割代入　配列の練習', () => {
+ const array=[1,2,3]
+ 
+ const [a,b,c]=array
+
+ expect(a).toBe(1);
+ expect(b).toBe(2);
+ expect(c).toBe(3);
+});
+
+test('分割代入 オブジェクトの練習', () => {
+ const obj={
+  "key":"value",
+  "key2":"aaa"
+ }
+
+ const {key,key2}=obj;
+ expect(key).toBe("value");
+ expect(key2).toBe("aaa");
+ expect({key,key2}).toStrictEqual(obj);
+});
