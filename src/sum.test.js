@@ -115,3 +115,22 @@ test('分割代入 オブジェクトの練習', () => {
  expect(key2).toBe("aaa");
  expect({key,key2}).toStrictEqual(obj);
 });
+
+test('三項演算子の練習', () => {
+
+  expect(typeof "文字列").toBe("string");
+  expect(typeof undefined).toBe("undefined");
+  expect(typeof true).toBe("boolean");
+
+  expect(addPrefix("abc")).toBe("デフォルト:abc");
+  expect(addPrefix("abc","d")).toBe("dabc");
+
+  expect(addPrefix(123)).toBe("デフォルト:123");
+  expect(addPrefix("てきすと","プレフィックス")).toBe("プレフィックスてきすと");
+});
+
+ function addPrefix(text, prefix) {
+  // `prefix`が指定されていない場合は"デフォルト:"を付ける
+  const pre = typeof prefix === "string" ? prefix : "デフォルト:";
+  return pre + text;
+}
