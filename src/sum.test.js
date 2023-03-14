@@ -134,3 +134,16 @@ test('三項演算子の練習', () => {
   const pre = typeof prefix === "string" ? prefix : "デフォルト:";
   return pre + text;
 }
+
+test('Number.parseInt,Number.parseFloatの練習', () => {
+
+  expect(Number.parseInt("10",10)).toBe(10);
+  expect(Number.parseInt("10",10)).not.toBe("10");
+  expect(Number.parseInt("10")).toBe(10);
+  expect(Number.parseFloat("3.14",10)).toBe(3.14);
+  expect(Number.parseFloat("3.14",10)).not.toBe("3.14");
+  expect(Number.parseFloat("3.14")).toBe(3.14);
+  expect(Number.parseInt("3.99",10)).toBe(3);
+  expect(Number.parseInt("AAA",10)).toBe(NaN);
+  expect(Number.isNaN(Number.parseInt("AAA",10))).toBe(true);
+});
