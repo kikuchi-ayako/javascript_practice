@@ -180,3 +180,11 @@ expect(addPrefix2("abc","d")).toBe("dabc");
 expect(addPrefix2(123)).toBe("デフォルト:123");
 expect(addPrefix2("てきすと","プレフィックス")).toBe("プレフィックスてきすと");
 });
+
+test('Function と　Arrow Functionの練習', () => {
+ const A = function(x){return x*x;}
+ const B = y => y*y;
+ 
+ expect(A(2)).toBe(4);
+ expect(B(3)).toBe(9);
+ });
