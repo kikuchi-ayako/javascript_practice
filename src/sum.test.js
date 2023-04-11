@@ -188,3 +188,23 @@ test('Function と　Arrow Functionの練習', () => {
  expect(A(2)).toBe(4);
  expect(B(3)).toBe(9);
  });
+
+test('if/else if の練習', () => {
+  const Version = function(vs){
+    if (vs === "ES5") {
+      return "ECMAScript 5";
+    } else if (vs === "ES6") {
+      return "ECMAScript 2015";
+    } else if (vs === "ES7") {
+      return "ECMAScript 2016";
+    }
+    return "unknown";
+  }
+ 
+  expect(Version("ES5")).toBe("ECMAScript 5");
+  expect(Version("ES6")).toBe("ECMAScript 2015");
+  expect(Version("ES7")).toBe("ECMAScript 2016");
+  expect(Version(3)).toBe("unknown");
+  });
+
+ 
