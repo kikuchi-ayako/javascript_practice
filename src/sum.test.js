@@ -207,4 +207,66 @@ test('if/else if の練習', () => {
   expect(Version(3)).toBe("unknown");
   });
 
+  test('else の練習', () => {
+  
+    const YEAR = function(year){
+      if (year % 400 === 0) { // 400で割り切れる
+        return true;
+    } else if (year % 100 === 0) { // 100で割り切れる
+        return false;
+    } else if (year % 4 === 0) { // 4で割り切れる
+        return true;
+    } else { // それ以外
+        return false;
+    }
+    } 
  
+    expect(YEAR(2020)).toBe(true);
+    expect(YEAR(2023)).toBe(false);
+    expect(YEAR(2000)).toBe(true);
+    expect(YEAR(1900)).toBe(false);
+  });
+  
+  test('switch  の練習', () => {
+    const Version = function(vs){
+      switch  (vs) {
+        case "ES5":
+          return "ECMAScript 5";
+        case "ES6":
+          return "ECMAScript 2015";
+        case "ES7":
+          return "ECMAScript 2016";
+        default:
+          return "unknown";
+      }
+    }
+    expect(Version("ES5")).toBe("ECMAScript 5");
+    expect(Version("ES6")).toBe("ECMAScript 2015");
+    expect(Version("ES7")).toBe("ECMAScript 2016");
+    expect(Version(3)).toBe("unknown");
+    }); 
+
+  test('switch2  の練習', () => {
+      const Amari = function(num){
+        switch  (num%4) {
+          case 0:
+            return "ぐー";
+          case 1:
+            return "ちょき";
+          case 2:
+            return "ぱー";
+          case 3:
+            return "あいこ";
+          default:
+            return "unknown";
+        }
+      }
+      expect(Amari(4)).toBe("ぐー");
+      expect(Amari(5)).toBe("ちょき");
+      expect(Amari(6)).toBe("ぱー");
+      expect(Amari(7)).toBe("あいこ");
+      expect(Amari("a")).toBe("unknown");
+      expect(Amari(0)).toBe("ぐー");
+      expect(Amari(14)).toBe("ぱー");
+      }); 
+  
