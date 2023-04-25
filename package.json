@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kikuchi-ayako/javascript_practice#readme",
   "devDependencies": {
-    "jest": "^29.3.1"
+    "jest": "^29.3.1",
+    "prettier": "2.8.8"
   }
 }
