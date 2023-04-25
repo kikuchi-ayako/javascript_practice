@@ -273,5 +273,3 @@ test("switch2  の練習", () => {
   expect(Amari(0)).toBe("ぐー");
   expect(Amari(14)).toBe("ぱー");
 });
-
-const a=1
