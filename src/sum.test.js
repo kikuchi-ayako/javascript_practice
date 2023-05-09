@@ -273,3 +273,49 @@ test("switch2  の練習", () => {
   expect(Amari(0)).toBe("ぐー");
   expect(Amari(14)).toBe("ぱー");
 });
+
+test("for の練習", () => {
+  const Sum = function (goal) {
+    let total = 0; // totalの初期値は0
+
+    for (let i = 0; i < goal; i++) {
+      total += i + 1; // 1から10の値をtotalに加算している
+    }
+    return total;
+  };
+  expect(Sum(4)).toBe(10);
+  expect(Sum(10)).toBe(55);
+});
+
+test("for の練習2", () => {
+  const Sum = function (numbers) {
+    let total = 0; // totalの初期値は0
+
+    for (let i = 0; i < numbers.length; i++) {
+      total += numbers[i];
+    }
+    return total;
+  };
+  expect(Sum([1, 2, 3, 4, 5])).toBe(15);
+  expect(Sum([])).toBe(0);
+  expect(Sum([2])).toBe(2);
+});
+
+test("break の練習", () => {
+  function isEvenIncluded(numbers) {
+    // 偶数があるかどうか
+    let isEvenIncluded = false;
+    for (let i = 0; i < numbers.length; i++) {
+      const num = numbers[i];
+      // numが2で割り切れるなら偶数
+      if (num % 2 === 0) {
+        isEvenIncluded = true;
+        break;
+      }
+    }
+    return isEvenIncluded;
+  }
+  expect(isEvenIncluded([1])).toBe(false);
+  expect(isEvenIncluded([])).toBe(false);
+  expect(isEvenIncluded([11, 12])).toBe(true);
+});
