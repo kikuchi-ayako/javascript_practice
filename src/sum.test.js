@@ -319,3 +319,82 @@ test("break の練習", () => {
   expect(isEvenIncluded([])).toBe(false);
   expect(isEvenIncluded([11, 12])).toBe(true);
 });
+
+test("breakからreturnの書き換え の練習", () => {
+  function isEvenIncluded(numbers) {
+    // 偶数があるかどうか
+    for (let i = 0; i < numbers.length; i++) {
+      const num = numbers[i];
+      // numが2で割り切れるなら偶数
+      if (num % 2 === 0) {
+        return true;
+      }
+    }
+    return false;
+  }
+  expect(isEvenIncluded([1])).toBe(false);
+  expect(isEvenIncluded([])).toBe(false);
+  expect(isEvenIncluded([11, 12])).toBe(true);
+});
+
+test("someとfilter の練習", () => {
+  const array1 = [1, 2, 3, 4, 5];
+  const array2 = [1, 3, 5, 7];
+  const array3 = [1028];
+
+  // some
+  expect(
+    array1.some((num) => {
+      return num % 2 === 0;
+    })
+  ).toBe(true);
+
+  expect(
+    array2.some((num) => {
+      return num % 2 === 0;
+    })
+  ).toBe(false);
+
+  expect(
+    array3.some((num) => {
+      return num % 2 === 0;
+    })
+  ).toBe(true);
+
+  // filter 偶数のみ
+  expect(
+    array1.filter((num) => {
+      return num % 2 === 0;
+    })
+  ).toStrictEqual([2, 4]);
+
+  expect(
+    array2.filter((num) => {
+      return num % 2 === 0;
+    })
+  ).toStrictEqual([]);
+
+  expect(
+    array3.filter((num) => {
+      return num % 2 === 0;
+    })
+  ).toStrictEqual([1028]);
+
+  // filter 奇数のみ
+  expect(
+    array1.filter((num) => {
+      return num % 2 !== 0;
+    })
+  ).toStrictEqual([1, 3, 5]);
+
+  expect(
+    array1.filter((num) => {
+      return !(num % 2 === 0);
+    })
+  ).toStrictEqual([1, 3, 5]);
+
+  expect(array1.filter((num) => num % 2 !== 0)).toStrictEqual([1, 3, 5]);
+
+  // filter 3以上
+  expect(array1.filter((num) => num >= 3)).toStrictEqual([3, 4, 5]);
+});
