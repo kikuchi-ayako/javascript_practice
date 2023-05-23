@@ -398,3 +398,43 @@ test("someとfilter の練習", () => {
   // filter 3以上
   expect(array1.filter((num) => num >= 3)).toStrictEqual([3, 4, 5]);
 });
+
+test("オブジェクト の練習", () => {
+  const obj = {};
+  expect(Object.keys(obj)).toStrictEqual([]);
+
+  const blueGreen = "blue-green";
+
+  const color = {
+    red: "Red",
+    green: "Green",
+    blue: "Blue",
+    [blueGreen]: "Blue-Green",
+  };
+  expect(Object.keys(color).length).toStrictEqual(4);
+  expect(color.red).toStrictEqual("Red");
+  expect(color.green).toStrictEqual("Green");
+  expect(color.blue).toStrictEqual("Blue");
+
+  //省略記法
+  const AAA = "あああ";
+
+  const A1 = {
+    AAA: AAA,
+  };
+
+  const A2 = {
+    AAA,
+  };
+
+  expect(A1.AAA === A2.AAA).toStrictEqual(true);
+  expect(A1).toStrictEqual(A2);
+
+  //プロパティの追加
+  color.orange = "Orange";
+  expect(color.orange).toStrictEqual("Orange");
+
+  //初期化時点で『blue-green』を設定したので、削除した
+  //  color["blue-green"]="Blue-Green";
+  expect(color["blue-green"]).toStrictEqual("Blue-Green");
+});
