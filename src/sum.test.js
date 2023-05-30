@@ -429,6 +429,7 @@ test("オブジェクト の練習", () => {
 
   expect(A1.AAA === A2.AAA).toStrictEqual(true);
   expect(A1).toStrictEqual(A2);
+  expect(A1.AAA).toStrictEqual("あああ");
 
   //プロパティの追加
   color.orange = "Orange";
@@ -437,4 +438,27 @@ test("オブジェクト の練習", () => {
   //初期化時点で『blue-green』を設定したので、削除した
   //  color["blue-green"]="Blue-Green";
   expect(color["blue-green"]).toStrictEqual("Blue-Green");
+});
+
+test("プロパティのチェック方法 の練習", () => {
+  const obj = {
+    one: 1,
+    three: 3,
+  };
+
+  //undefinedでチェックする方法
+  expect(obj.one).toBe(1);
+  expect(obj.two).toBe(undefined);
+
+  //Object.hasOwnを呼び出す練習
+  expect(Object.hasOwn(obj, "one")).toBe(true);
+  expect(Object.hasOwn(obj, "two")).toBe(false);
+
+  //Object.keys, Object.values, Object.entiriesを呼び出してテストコードで動きを確認してみる
+  expect(Object.keys(obj)).toStrictEqual(["one", "three"]);
+  expect(Object.values(obj)).toStrictEqual([1, 3]);
+  expect(Object.entries(obj)).toStrictEqual([
+    ["one", 1],
+    ["three", 3],
+  ]);
 });
